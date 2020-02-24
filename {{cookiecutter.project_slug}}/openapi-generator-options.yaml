@@ -1,0 +1,48 @@
+---
+# options are for python-aiohttp-generator
+
+title: {{ cookiecutter.project_name }}
+
+# python package name (convention: snake_case)
+packageName: {{ cookiecutter.pymodule }}
+
+packageVersion: {{ cookiecutter.version }}
+
+# root package for generated code
+invokerPackage: {{ cookiecutter.pymodule }}
+
+# relative packages (apiPackage is an alias for controllerPackage)
+controllerPackage: web.controllers
+modelPackage: web.models
+testPackage: tests.webapi
+
+defaultController: default_controller
+# Remove prefix of operationId, e.g. config_getId => getId
+# removeOperationIdPrefix: somePrefix_
+
+# make it clear that the models do not contain business logic
+# and are for communication with the "view" (the api clients)
+# modelNameSuffix: DTO # not supported by python server generators
+# modelNamePrefix:
+# Generate alias to map, array as models
+# generateAliasAsModel: false
+
+importMappings:
+  Problem: 'from connexion.problem import problem'
+
+# aiohttp is python3 only!
+supportPython2: false
+enablePostProcessFile: true
+
+# TCP port to listen to in app.run (Default: 8080)
+# This should be an unused port outside of the protected and ephemeral ranges
+# that does not seem to be used by any known service (including Theatro services)
+serverPort: {{ cookiecutter.default_port }}
+
+# Options that may need to be ported from the Java SpringBoot generator to python-aiohttp
+# useTags: true
+# apiFirst: true
+# delegatePattern: true
+# groupApisInSubpackages: true
+
+hideGenerationTimestamp: false
