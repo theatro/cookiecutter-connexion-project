@@ -9,6 +9,9 @@ packages = [
     #{ include = "tests", format = "sdist" },
 ]
 
+[tool.poetry.scripts]
+{{ cookiecutter.entrypoint_script }} = "{{ cookiecutter.pymodule }}.app:main"
+
 [tool.poetry.dependencies]
 python = "^3.7"
 asyncio = "*"  # actually this is in std lib
