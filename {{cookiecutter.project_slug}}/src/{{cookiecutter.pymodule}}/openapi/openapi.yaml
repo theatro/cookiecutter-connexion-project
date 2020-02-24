@@ -1,6 +1,6 @@
 openapi: 3.0.2
 info:
-  title: "{{ cookiecutter.package_name }}"
+  title: "{{ cookiecutter.project_name }}"
   description: |
     {{ cookiecutter.project_short_description }}
   version: "{{ cookiecutter.version }}"

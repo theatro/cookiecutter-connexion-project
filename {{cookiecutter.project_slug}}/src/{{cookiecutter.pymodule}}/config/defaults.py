@@ -16,6 +16,6 @@ DEFAULT_CONFIG_FILE = "/etc/{{ cookiecutter.project_slug }}.yaml"
 DEFAULT_WEB_CONFIG = {
     "swagger_ui": True,
     "serve_spec": True,
-    "port": {{ cookiecutter.port }},
+    "port": {{ cookiecutter.default_port }},
     "host": "127.0.0.1",
 }
