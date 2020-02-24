@@ -1,3 +1,5 @@
+# NOTE: Do not use __future__ annotations on marshmallow model files
+
 import logging
 
 from cfg_loader import ConfigSchema
