@@ -9,6 +9,7 @@ import uvloop
 
 from . import di
 from .config import build_config_loader
+from .web.resolver import SpecTagsResolver
 
 logger = logging.getLogger(__name__)
 
@@ -23,11 +24,15 @@ def prepare_web_controllers(options: dict) -> connexion.AioHttpApp:
         options=options,
         only_one_api=True,
     )
+    resolver = SpecTagsResolver(
+        "{{ cookiecutter.pymodule }}.web.controllers", default_module_name="default_controller"
+    )  # resolves the controller based on tags in the spec
     app.add_api(
         "openapi.yaml",
         arguments={"title": "{{ cookiecutter.project_name }}"},
         pythonic_params=True,
         pass_context_arg_name="request",
+        resolver=resolver,
     )
     return app
 
