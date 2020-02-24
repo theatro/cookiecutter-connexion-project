@@ -22,7 +22,6 @@ inflection = "^0.3.1"
 marshmallow = "^3.5.0"
 punq = "^0.4.1"
 theatro-cfg-loader = "^0.3.0"  # fork of Cfg-Loader that supports marshmallow>=3.0.0
-marshmallow-oneofschema = "^2.0.0"
 requests = "^2.23.0"
 
 [tool.poetry.dev-dependencies]

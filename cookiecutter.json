@@ -7,6 +7,7 @@
     "pymodule": "{{ cookiecutter.project_slug.replace('-', '_') }}",
     "entrypoint_script": "{{ cookiecutter.pymodule }}",
     "project_short_description": "A short description of the project",
+    "default_port": "13333",
     "release_date": "{% now 'local' %}",
     "version": "0.1.0",
     "_extensions": ["jinja2_time.TimeExtension"]
