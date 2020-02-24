@@ -4,6 +4,8 @@
     "github_username": "Your github username",
     "project_name": "Name of the project",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+    "pymodule": "{{ cookiecutter.project_slug.replace('-', '_') }}",
+    "entrypoint_script": "{{ cookiecutter.pymodule }}",
     "project_short_description": "A short description of the project",
     "release_date": "{% now 'local' %}",
     "version": "0.1.0",

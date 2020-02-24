@@ -1,0 +1,55 @@
+[tool.poetry]
+name = "{{ cookiecutter.project_name }}"
+version = "{{ cookiecutter.version }}"
+description = "{{ cookiecutter.description }}"
+authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
+packages = [
+    { include = "{{ cookiecutter.pymodule }}", from = "src" },
+    # exclude until https://github.com/python-poetry/poetry/issues/1811 is resolved
+    #{ include = "tests", format = "sdist" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+asyncio = "*"  # actually this is in std lib
+uvloop = "*"
+connexion = {version = "^2.6.0", extras = ["aiohttp", "swagger-ui"]}
+aiohttp_jinja2 = "^1.2.0"
+inflection = "^0.3.1"
+marshmallow = "^3.5.0"
+punq = "^0.4.1"
+theatro-cfg-loader = "^0.3.0"  # fork of Cfg-Loader that supports marshmallow>=3.0.0
+marshmallow-oneofschema = "^2.0.0"
+requests = "^2.23.0"
+
+[tool.poetry.dev-dependencies]
+coverage = "^5.0.3"
+pytest = "^5.3.5"
+pytest-aiohttp = "^0.3.0"
+flake8 = "^3.7.0"
+tox = "^3.0.0"
+bump2version = "^0.5.11"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+[tool.black]
+target-version = ['py37']
+# https://github.com/psf/black#configuration-format
+exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+)
+'''
