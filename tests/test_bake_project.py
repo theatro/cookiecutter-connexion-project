@@ -29,3 +29,8 @@ def test_run_flake8(cookies):
     result = cookies.bake(extra_context={'project_slug': 'flake8_compat'})
     with inside_dir(str(result.project)):
         subprocess.check_call(['flake8'])
+
+
+def test_run_black(cookies):
+    result = cookies.bake(extra_context={'project_slug': 'black_check'})
+    subprocess.check_call(['black', '--check', str(result.project)])

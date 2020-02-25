@@ -15,7 +15,7 @@ def base_test_config():
             "swagger_ui": True,
             "serve_spec": True,
             # "middlewares": [@aiohttp.web.middleware],
-        },
+        }
     }
 
 

@@ -16,12 +16,14 @@ class WebOptions(ConfigSchema):
 
     # connexion.options.ConnexionOptions
     swagger_ui = fields.Boolean(
-        default=DEFAULT_WEB_CONFIG["swagger_ui"], missing=DEFAULT_WEB_CONFIG["swagger_ui"]
+        default=DEFAULT_WEB_CONFIG["swagger_ui"],
+        missing=DEFAULT_WEB_CONFIG["swagger_ui"],
     )  # openapi_console_ui_available
     # swagger_url = fields.String(default="/ui")  # openapi_console_ui_path
     # swagger_path = fields.String()  # openapi_spec_ui_from_dir
     serve_spec = fields.Boolean(
-        default=DEFAULT_WEB_CONFIG["serve_spec"], missing=DEFAULT_WEB_CONFIG["serve_spec"]
+        default=DEFAULT_WEB_CONFIG["serve_spec"],
+        missing=DEFAULT_WEB_CONFIG["serve_spec"],
     )  # openapi_spec_available
     # openapi_spec_path = fields.String(default="/openapi.json")  # openapi_spec_path
     # uri_parser_class = enum(
@@ -40,8 +42,12 @@ class WebOptions(ConfigSchema):
     #   ]
 
     # connexion.apps.AioHttpApp.run() options
-    port = fields.Integer(default=DEFAULT_WEB_CONFIG["port"], missing=DEFAULT_WEB_CONFIG["port"])
-    host = fields.String(default=DEFAULT_WEB_CONFIG["host"], missing=DEFAULT_WEB_CONFIG["host"])
+    port = fields.Integer(
+        default=DEFAULT_WEB_CONFIG["port"], missing=DEFAULT_WEB_CONFIG["port"]
+    )
+    host = fields.String(
+        default=DEFAULT_WEB_CONFIG["host"], missing=DEFAULT_WEB_CONFIG["host"]
+    )
 
 
 class AppOptions(ConfigSchema):
