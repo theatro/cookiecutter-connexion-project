@@ -9,7 +9,7 @@ Install `cookiecutter` command line: `pip install cookiecutter`
 
 Usage
 -----
-Generate a new Cookiecutter template layout: `cookiecutter gh:cognifloyd/cookiecutter-connexion-project`    
+Generate a new Cookiecutter template layout: `cookiecutter gh:theatro/cookiecutter-connexion-project`    
 
 License
 -------
