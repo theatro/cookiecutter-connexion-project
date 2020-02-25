@@ -2,7 +2,7 @@
 
 import logging
 
-from marshmallow import Schema, RAISE, post_load, post_dump
+from marshmallow import Schema, RAISE, post_load, post_dump  # noqa: F401
 
 logger = logging.getLogger(__name__)
 
